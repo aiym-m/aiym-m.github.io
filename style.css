@@ -7,7 +7,7 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width:80%;
+    min-width:80%;
     height:600px;
     background-color: rgba(194, 193, 193, 0.858);
     margin: 5% 10%;
@@ -36,14 +36,14 @@ h1{
     gap:200px;
 }
 a{
-    text-decoration-style: none;
+    text-decoration: none;
     color:black;
 }
 .links{
     display: flex;
     justify-content: space-between;
     align-items: end;
-    text-decoration: none;
+    
    
 }
 .button{
