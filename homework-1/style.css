@@ -1,0 +1,30 @@
+ul{
+    width:80%;
+    height:600px;
+    background-color: antiquewhite;
+    box-sizing: border-box;
+    padding:50px;
+    margin-left: 50px;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:20px;
+}
+.toAddNew{
+    box-sizing: border-box;
+    padding-left: 30%;
+    padding-top: 15px;
+}
+.status{
+    width: 150px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid lightblue;
+    padding: 20px;
+    color:lightseagreen;
+}

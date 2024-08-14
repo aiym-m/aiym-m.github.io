@@ -1,0 +1,36 @@
+body{
+    margin:0px;
+    padding:0px;
+    background-color: rgb(218, 218, 200);
+}
+.mainDiv{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:20px;
+    box-sizing: border-box;
+    padding: 30px;
+    width:80%;
+    height: 600px;
+
+}
+.homeworks{
+    width: 200px;
+    height:80px;
+    background-color: lightcyan;
+    border: 2px solid white;
+    border-radius: 5px;
+    align-content: center;
+    padding-left: 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+
+}
+a{
+    color:black;
+}
+.homeworks a:hover{
+    color: white;
+    
+}
+
