@@ -1,0 +1,89 @@
+body{
+    margin:0px;
+    padding:0px;
+}
+.main{
+    display:flex;
+    gap:10px;
+}
+.mainDiv{
+    display:flex;
+    flex-wrap: wrap;
+    gap:5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: rgba(252, 243, 231, 0.851);
+    width:75%;
+
+}
+h2 {
+    margin:0px;
+    
+}
+p{
+    margin:0px;
+}
+.blocks{
+    width:340px;
+    
+    background-color: rgb(248, 248, 235);
+    border: 1px solid rgb(142, 141, 141);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:8px;
+}
+
+img{
+    width:320px;
+    height:330px;
+    
+}
+#headerButton{
+    display: flex;
+    gap:100px;
+    align-items: center;
+}
+.star{
+    font-size: 22px;
+    color:orange;
+}
+.star:active{
+    color: orangered;
+}
+.star:checked{
+    color: orangered;
+}
+
+.block2{
+    width:25%;
+    background-color: rgb(231, 234, 234);
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-top: 10px;
+
+}
+#favoritesList{
+    padding:0px;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+li{
+    width:95%;
+    list-style:none;
+    border-bottom:1px solid black;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    color:crimson;
+}
+h2{
+    padding-left: 10px;
+}

@@ -5,12 +5,11 @@ body{
 }
 .mainDiv{
     display:flex;
-    flex-direction: column;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap:20px;
     box-sizing: border-box;
     padding: 30px;
-    width:80%;
+    width:100%;
     height: 600px;
 
 }
