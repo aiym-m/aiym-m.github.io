@@ -1,0 +1,56 @@
+.form{
+    width:350px;
+    height: 300px;
+    
+    border: 1px solid rgb(229, 228, 228);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    
+    align-items: center;
+    box-sizing: border-box;
+    padding-bottom: 15px;
+    padding-top: 20px;
+    background-color: rgb(245, 236, 220);
+    border-radius: 10px;
+    margin:30px;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    margin-left: 100px;
+}
+.product-img{
+    width: 300px;
+    height:40px;
+}
+.product-title{
+    width:300px;
+    height:40px;
+}
+.description{
+    width: 300px;
+    height:80px;
+    
+}
+.product-price{
+    width:300px;
+    height:40px;
+}
+#addBtn{
+    width: 100px;
+    height:40px;
+    background-color: orangered;
+    color: white;
+    border: 1px solid white;
+    border-radius: 7px;
+}
+h1{
+    margin:0px;
+    padding: 5px;
+}

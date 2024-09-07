@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body{
+        background-color:rgb(209, 201, 188);
+    }
+    .chosenMovie {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      width:80%;
+      padding-left: 100px;
+    }
+    .description{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 800px;
+        background-color: #dce7ed;
+        border-radius: 20px;
+        
+    }
+    p{
+        margin:10px;
+        font-weight: 600;
+        
+    }
+    h2{
+        margin:10px;
+       
+    }
+    h1{
+       
+        padding-left: 100px;
+    }
+    img{
+      border: 3px solid rgb(223, 223, 223);
+      box-shadow: 10px 10px 20px rgb(211, 242, 252);
+    }
+    .trailer:hover{
+      transform: scale(1.04);
+    }
+    .trailer{
+      width: 800px;
+      height: 200px;
+      margin: 60px 200px;
+    }
+   
+  </style>
+  <body>
+    <h1>Movie</h1>
+    <div class="chosenMovie">
+      <img />
+      <div class="description">
+        <h2></h2>
+        <p class="genres"></p>
+        <p class="release-date"></p>
+        <p class="vote-average"></p>
+        <p class="runtime"></p>
+        <p class="overview"></p>
+      </div>
+    </div>
+    <div class="trailerDiv">
+        <iframe class="trailer">Trailer</iframe>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const movieId = location.search.split("=")[1];
+      const imagePrefix = "https://image.tmdb.org/t/p/w500/";
+      
+
+      async function getMovie() {
+        try {
+          const { data } = await axios(
+            `https://api.themoviedb.org/3/movie/${movieId}?api_key=95838daedcc35e527a42c415154f5244`
+          );
+          console.log(data);
+          document.querySelector("h2").textContent = data.title;
+          document.querySelector("img").src = imagePrefix + data.backdrop_path;
+          document.querySelector(".overview").textContent = "About the movie:" + " " + data.overview;
+          const genres = data.genres.map((genre) => genre.name).join(", ");
+          document.querySelector(".genres").textContent = `Genres: ${genres}`;
+          document.querySelector(".release-date").textContent = "Release date:" + " " + data.release_date;
+          document.querySelector(".vote-average").textContent = "Rating:" + " " + data.vote_average.toFixed(1);
+          document.querySelector(".runtime").textContent ="Runtime:" + " " + data.runtime + "min";
+
+
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      getMovie();
+
+
+      async function getTrailer() {
+  try {
+    const { data } = await axios(
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=95838daedcc35e527a42c415154f5244`
+    );
+    
+    // Find the first official trailer
+    const trailer = data.results.find(
+      (video) => video.type === "Trailer" && video.site === "YouTube"
+    );
+    
+    if (trailer) {
+      const trailerUrl = `https://www.youtube.com/embed/${trailer.key}`;
+      document.querySelector("iframe").src = trailerUrl; // Assuming there's an <iframe> to show the trailer
+    } else {
+      document.querySelector(".trailer-container").textContent = "No trailer available.";
+    }
+  } catch (error) {
+    console.log(error);
+    document.querySelector(".trailer-container").textContent = "Error loading trailer.";
+  }
+}
+
+// Call both functions to fetch movie details and trailer
+getMovie();
+getTrailer();
+    </script>
+  </body>
+</html>

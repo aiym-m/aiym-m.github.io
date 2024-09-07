@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+</head>
+<style>
+  body{
+    margin:0px;
+    padding: 100px;
+    background-color: rgb(173, 172, 172);
+  }
+  .card{
+    border: 2px solid aqua;
+    background-color: azure;
+    display: flex;
+    width: 800px;
+    justify-content:space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 10px;
+  }
+  .buttonRemove{
+    color: red;
+    border: none;
+    height:25px;
+    background-color: rgb(189, 188, 188);
+  }
+  p{
+    font-weight: bold;
+    font-size: 20px;
+  }
+</style>
+<body>
+    <h1>My Favorite Movies</h1>
+    <div class="container"></div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+    const divEl = document.querySelector(".container");
+const imagePrefix = "https://image.tmdb.org/t/p/w500/";
+
+function displayFavorites() {
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  
+  // Clear the existing content
+  divEl.innerHTML = "";
+
+  if (favorites.length === 0) {
+    divEl.innerHTML = "<p>No favorite movies added yet.</p>";
+  } else {
+    favorites.forEach((movie) => {
+      const movieCard = document.createElement("div");
+      movieCard.classList.add("card");
+
+      const titleEl = document.createElement("p");
+      titleEl.textContent = movie.title;
+     
+
+      const buttonContainer = document.createElement("div");
+      buttonContainer.classList.add("textButton");
+
+      const removeButton = document.createElement("button");
+      removeButton.classList.add("buttonRemove");
+      removeButton.textContent = "Remove from favorites";
+      removeButton.setAttribute("data-movie-id", movie.id);
+
+      // Attach the click event listener directly when creating the button
+      removeButton.addEventListener("click", function () {
+        const movieId = this.getAttribute("data-movie-id");
+        removeFromFavorites(movieId);
+        displayFavorites(); // Refresh the display
+      });
+
+      // Append elements together
+      buttonContainer.appendChild(removeButton);
+      movieCard.appendChild(titleEl);
+      movieCard.appendChild(buttonContainer);
+      divEl.appendChild(movieCard);
+    });
+  }
+}
+
+function removeFromFavorites(movieId) {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  favorites = favorites.filter((movie) => movie.id !== parseInt(movieId));
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+// Display favorite movies on page load
+displayFavorites();
+
+
+    </script>
+</body>
+</html>

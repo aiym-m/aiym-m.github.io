@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/currconverter/style.css" />
+  </head>
+  <body>
+    <div class="mainDiv">
+      <h2>Currency Converter</h2>
+      <label
+        >Value to Convert: <input class="enteringValue" type="text"
+      /></label>
+
+      <div>
+        <label for="select">From:</label>
+        <select class="from">
+          <option value="usd">USD - US Dollar</option>
+          <option value="gbp">GBP - Pound Sterling</option>
+          <option value="kgs">KGS - Kyrgyzstani Som</option>
+          <option value="cny">CNY - Chinese Yuan Renminbi</option>
+          <option value="aed">AED - Emirati Dirham</option>
+        </select>
+      </div>
+      <div>
+        <label for="select">To:</label>
+        <select class="to">
+          <option value="usd">USD - US Dollar</option>
+          <option value="gbp">GBP - Pound Sterling</option>
+          <option value="kgs">KGS - Kyrgyzstani Som</option>
+          <option value="cny">CNY - Chinese Yuan Renminbi</option>
+          <option value="aed">AED - Emirati Dirham</option>
+        </select>
+      </div>
+      <div>
+        <button>Clear</button>
+        <button class="convert">Calculate</button>
+      </div>
+      <div class="finalAmount">
+        <h2></h2>
+        <div class="output">
+        </div>
+      </div>
+    </div>
+
+    <script src="/currconverter/index.js"></script>
+  </body>
+</html>

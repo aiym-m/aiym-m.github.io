@@ -1,0 +1,104 @@
+body{
+    background-image: linear-gradient(to right, rgba(9, 2, 132, 0), rgb(15, 23, 56));
+    margin:0px;
+   
+    
+}
+.container{
+    padding-left:100px;
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:10px;
+}
+.card{
+    width:200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+
+img{
+    width:200px;
+    height:300px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.rating{
+    margin: 0px;
+    position: relative;
+    width:35px; 
+    font-weight: bold;
+    color:rgba(214, 71, 4, 0.65);
+    text-align: center;
+}
+
+.textButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:5px;
+    
+}
+.buttonAdd{
+    background-color: orangered;
+    color:white;
+    border: 0;
+    border-radius: 5px;
+    height: 25px;
+    
+}
+.movie-btn{
+    width: 150px;
+    height:30px;
+    font-size:medium;
+    border-radius: 5px;
+    overflow:auto;
+    border: 0.5px solid rgb(176, 175, 175);
+}
+.card:hover{
+    transform: scale(1.04);
+}
+.head-part{
+    display: flex;
+    gap: 100px;
+    align-items: center;
+}
+
+.search-input{
+    width:300px;
+    height:35px;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+a:hover{
+    color:orangered
+}
+h2{
+    font-family: "Cinzel", serif;
+    font-size: 28px;
+    color:rgba(15, 23, 56, 0.869);
+    text-shadow: 2px 2px 4px #000000;
+    padding-left: 50px;
+}
+/* #results{
+    display: none;
+    padding-left:100px;
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:10px;
+} */
